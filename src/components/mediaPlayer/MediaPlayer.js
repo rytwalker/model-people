@@ -1,22 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { tracks } from './tracks';
+import { durationToTimestamp } from '../../utils/durationToTimestamp';
 
 const MediaPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [currentTrack, setCurrentTrack] = useState({});
   const [percent, setPercent] = useState('0%');
-
-  const durationToTimestamp = timestamp => {
-    let minutes = Math.floor(timestamp / 60);
-    let seconds = timestamp - minutes * 60;
-    if (seconds < 10) {
-      seconds = `0${seconds}`;
-    }
-    timestamp = `${minutes}:${seconds}`;
-    return timestamp;
-  };
 
   const updateTime = timestamp => {
     timestamp = Math.floor(timestamp);
