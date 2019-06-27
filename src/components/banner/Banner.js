@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+// import ImageCard from './ImageCard';
 
 const Banner = () => {
   const [screenWidth] = useState(window.innerWidth);
@@ -9,6 +10,7 @@ const Banner = () => {
         <img
           src={require('../../assets/img/header-img.jpg')}
           alt="header img"
+          className="gridItem-1"
         />
       ) : (
         <>
